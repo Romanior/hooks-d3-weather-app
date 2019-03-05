@@ -6,7 +6,6 @@ import { DateTime } from 'luxon';
 
 import './styles.scss';
 
-
 export default function({ data = [], scrollContainer = {} }) {
   const dataWithDates = data.map(day => ({
     ...day,
