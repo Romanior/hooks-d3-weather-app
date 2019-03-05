@@ -1,0 +1,7 @@
+// colors
+$dark: #1a202d;
+$darken: rgba(44, 55, 74, 0.6);
+$dark-light: #2c374a;
+$gray: #aca9b6;
+$gray-dark: darken($gray, 20%);
+$dark-grad: linear-gradient(175deg, $dark-light 0%, #181E28 100%);

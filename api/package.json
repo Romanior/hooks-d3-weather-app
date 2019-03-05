@@ -1,0 +1,19 @@
+{
+  "name": "proxy-dark-sky-api",
+  "version": "1.0.0",
+  "description": "Proxy for Dark Sky API",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "author": "roma.khudyakov@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "luxon": "^1.11.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  }
+}

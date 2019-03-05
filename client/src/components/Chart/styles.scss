@@ -1,0 +1,41 @@
+@import 'styles/vars.scss';
+
+$shadow-opacity: 0.4;
+$main-fill: $gray;
+
+.Chart {
+  position: absolute;
+  left: 0;
+  bottom: 5vh;
+  z-index: 1;
+
+  .line {
+    fill: none;
+    stroke: $main-fill;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+
+    &.--shadow {
+      stroke-opacity: $shadow-opacity;
+    }
+  }
+
+  .circle {
+    fill: $main-fill;
+    stroke-width: 1.5;
+
+    &.--shadow {
+      fill: darken($main-fill, 15%);
+    }
+  }
+
+  .text {
+    fill: $main-fill;
+    font-size: .7em;
+
+    &.--shadow {
+      fill: darken($main-fill, 30%);
+    }
+  }
+}

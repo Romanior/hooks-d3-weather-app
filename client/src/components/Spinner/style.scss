@@ -1,0 +1,55 @@
+@import 'styles/vars.scss';
+
+$colors: white, $gray;
+$d: 175.6449737548828;
+$d-half: $d / 2;
+
+.Spinner {
+  width: 66px; height: 66px;
+  animation: contanim 2s linear infinite;
+  fill: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -28px 0 0 -28px;
+
+  > circle {
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: rotate(-90deg);
+    fill: none;
+
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        stroke: nth($colors, $i);
+        stroke-dasharray: 1, 300;
+        stroke-dashoffset: 1;
+
+        animation: strokeanim 3s calc(.2s * (#{$i})) ease infinite;
+        transform-origin: center center;
+      }
+    }
+  }
+}
+
+@keyframes strokeanim {
+  0% {
+    stroke-dasharray: 1, 300;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -$d / 3;
+  }
+  100% {
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -$d;
+  }
+}
+
+@keyframes contanim {
+  100% {
+    transform: rotate(360deg)
+  }
+}
